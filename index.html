@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Nurul Muftiatul Luthfiah (Upii) ✨</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond, Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Tailwind Custom Palette & Font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        velvet: {
+                            950: '#0d0509',
+                            900: '#12080d',
+                            800: '#1e0b14',
+                            700: '#2d111e',
+                        },
+                        champagne: {
+                            300: '#fae6be',
+                            400: '#f3d59b',
+                            500: '#e2b86b',
+                        },
+                        rose: {
+                            300: '#f2b8ba',
+                            400: '#e5989b',
+                            500: '#c97276',
+                        },
+                        ivory: '#fdf8f5',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================================
+           GAYA DASAR & ATMOSFER ROMANTIS
+           ========================================================================== */
+        body {
+            background: radial-gradient(circle at 50% 20%, #240d18 0%, #12080d 55%, #0a0407 100%);
+            color: #fdf8f5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Latar Belakang Canvas Partikel (Kunang-kunang Emas & Kelopak Mawar) */
+        #romantic-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Efek Cahaya Ambien Halus */
+        .ambient-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+            animation: pulseGlow 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.25; }
+            100% { transform: scale(1.15); opacity: 0.42; }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(30, 11, 20, 0.55);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(243, 213, 155, 0.18);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(253, 248, 245, 0.08);
+        }
+
+        /* Tombol Emas Bercahaya */
+        .btn-champagne {
+            background: linear-gradient(135deg, #f3d59b 0%, #d9ad5b 100%);
+            color: #16090f;
+            box-shadow: 0 0 25px rgba(243, 213, 155, 0.35);
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .btn-champagne:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 38px rgba(243, 213, 155, 0.6);
+        }
+
+        .btn-champagne:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Animasi Muncul Perlahan (Scroll Reveal) */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==========================================================================
+           ANIMASI KUE & LILIN ULANG TAHUN INTERAKTIF (FASE 4)
+           ========================================================================== */
+        .candle-flame {
+            transform-origin: 50% 100%;
+            animation: flicker 1.6s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 12px #ffbe55) drop-shadow(0 0 24px #ff7b00);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .candle-flame.blown-out {
+            opacity: 0;
+            transform: scale(0.1) translateY(-10px);
+            animation: none;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-2deg); opacity: 0.95; }
+            33% { transform: scale(1.05, 0.96) rotate(2deg); opacity: 1; }
+            66% { transform: scale(0.96, 1.04) rotate(-1deg); opacity: 0.9; }
+            100% { transform: scale(1.03) rotate(1.5deg); opacity: 1; }
+        }
+
+        .candle-halo {
+            animation: haloPulse 2s ease-in-out infinite alternate;
+            transition: opacity 0.5s ease;
+        }
+
+        .candle-halo.blown-out {
+            opacity: 0 !important;
+        }
+
+        @keyframes haloPulse {
+            0% { transform: scale(0.92); opacity: 0.45; }
+            100% { transform: scale(1.12); opacity: 0.75; }
+        }
+
+        /* Asap tipis setelah lilin ditiup */
+        .smoke-puff {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .smoke-puff.rising {
+            animation: riseSmoke 2.8s ease-out forwards;
+        }
+
+        @keyframes riseSmoke {
+            0% { opacity: 0; transform: translateY(0) scale(0.6); }
+            25% { opacity: 0.65; }
+            100% { opacity: 0; transform: translateY(-55px) translateX(12px) scale(1.8); }
+        }
+
+        /* ==========================================================================
+           KERTAS SURAT CINTA KLASIK (FASE 5)
+           ========================================================================== */
+        .letter-paper {
+            background-color: #fcf6ee;
+            background-image: 
+                radial-gradient(rgba(210, 175, 130, 0.14) 1px, transparent 0),
+                repeating-linear-gradient(transparent, transparent 31px, rgba(190, 155, 115, 0.22) 32px);
+            background-size: 20px 20px, 100% 32px;
+            color: #2b1820;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(243, 213, 155, 0.4);
+        }
+
+        /* Equalizer Musik Mini */
+        .eq-bar {
+            width: 3px;
+            background-color: #f3d59b;
+            border-radius: 9999px;
+            animation: eqBounce 0.9s ease-in-out infinite alternate;
+        }
+        .eq-paused .eq-bar {
+            animation-play-state: paused;
+            height: 4px !important;
+        }
+        @keyframes eqBounce {
+            0% { height: 4px; }
+            100% { height: 16px; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #12080d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(243, 213, 155, 0.3);
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(243, 213, 155, 0.55);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-rose-400/30 selection:text-champagne-300">
+
+    <!-- ==========================================================================
+         PANDUAN KUSTOMISASI MUDAH UNTUK DEPLOY:
+         1. Letakkan file lagu kamu di folder yang sama dengan nama: musik.mp3
+         2. Letakkan 6 foto kenangan di folder yang sama dengan nama:
+            foto1.jpg, foto2.jpg, foto3.jpg, foto4.jpg, foto5.jpg, foto6.jpg
+         3. Untuk mengubah judul/cerita foto & isi surat cinta, gulir ke bagian
+            <script> di bawah pada variabel `CONFIG_KENANGAN` dan `CONFIG_SURAT`.
+         ========================================================================== -->
+
+    <!-- Cahaya Ambien Latar Belakang -->
+    <div class="ambient-glow bg-rose-500/30 w-96 h-96 top-[-5%] left-[-10%]"></div>
+    <div class="ambient-glow bg-champagne-500/20 w-[30rem] h-[30rem] bottom-[10%] right-[-10%]" style="animation-delay: 3s;"></div>
+
+    <!-- Canvas Partikel Kunang-kunang & Kelopak Mawar -->
+    <canvas id="romantic-canvas"></canvas>
+
+    <!-- Elemen Audio Latar (Default mengarah ke musik.mp3) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Input File Tersembunyi untuk Upload Preview MP3 & Foto Lokal -->
+    <input type="file" id="upload-mp3-input" accept="audio/mp3,audio/*" class="hidden">
+    <input type="file" id="upload-photo-input" accept="image/*" class="hidden">
+
+    <!-- Notifikasi Toast Lembut (Pengganti alert) -->
+    <div id="toast-message" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-500 transform -translate-y-3">
+        <div class="glass-card px-5 py-2.5 rounded-full text-xs sm:text-sm text-champagne-300 flex items-center gap-2 shadow-xl">
+            <span class="w-2 h-2 rounded-full bg-champagne-400 animate-ping"></span>
+            <span id="toast-text">Pesan notifikasi</span>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         KONTROL MUSIK MELAYANG (FLOATING AUDIO PLAYER)
+         ========================================================================== -->
+    <div id="floating-player" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 opacity-0 pointer-events-none transition-all duration-700">
+        <div class="glass-card rounded-full p-2 pr-4 flex items-center gap-3 shadow-2xl">
+            <button id="toggle-music-btn" aria-label="Putar atau Jeda Musik" class="w-10 h-10 rounded-full bg-champagne-400/20 hover:bg-champagne-400/35 border border-champagne-400/40 flex items-center justify-center text-champagne-300 transition">
+                <!-- Ikon Play -->
+                <svg id="icon-play" class="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <!-- Ikon Pause -->
+                <svg id="icon-pause" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                    <span id="music-title" class="text-xs font-medium text-ivory/90 max-w-[125px] sm:max-w-[160px] truncate">Lagu Untuk Upii</span>
+                    <div id="eq-indicator" class="flex items-end gap-0.5 h-4 eq-paused">
+                        <span class="eq-bar" style="animation-delay: 0.1s"></span>
+                        <span class="eq-bar" style="animation-delay: 0.4s"></span>
+                        <span class="eq-bar" style="animation-delay: 0.2s"></span>
+                    </div>
+                </div>
+                <button id="trigger-upload-mp3" class="text-[10px] text-rose-300/85 hover:text-champagne-300 text-left underline decoration-dotted transition">
+                    Ganti / Uji file MP3
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         FASE 1: GERBANG PEMBUKA (THE ENVELOPE / LOCK SCREEN)
+         ========================================================================== -->
+    <section id="fase-1" class="fixed inset-0 z-30 flex flex-col items-center justify-center px-6 text-center bg-velvet-950/95 backdrop-blur-md transition-all duration-1000">
+        <div class="max-w-xl mx-auto flex flex-col items-center">
+            <!-- Ornamen Atas -->
+            <div class="mb-6 flex items-center gap-3 text-champagne-400/80">
+                <span class="h-px w-10 bg-gradient-to-r from-transparent to-champagne-400/60"></span>
+                <svg class="w-5 h-5 text-rose-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="h-px w-10 bg-gradient-to-l from-transparent to-champagne-400/60"></span>
+            </div>
+
+            <p class="text-xs sm:text-sm uppercase tracking-[0.28em] text-rose-300/90 mb-4 font-medium">
+                28 November — Hari di mana dunia pernah tersenyum
+            </p>
+
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-semibold text-ivory leading-tight mb-6">
+                “Sebuah ruang kecil yang kubuat khusus untukmu, <span class="italic text-champagne-400">Sayang...</span>”
+            </h1>
+
+            <p class="text-sm sm:text-base text-ivory/70 max-w-md mb-10 leading-relaxed font-light">
+                Nyalakan suaramu, tarik napas perlahan, dan izinkan aku membawamu menyusuri setiap detik rasa syukurku memilikimu.
+            </p>
+
+            <button id="open-surprise-btn" class="btn-champagne px-8 py-4 rounded-full font-medium text-sm sm:text-base tracking-wide flex items-center gap-3 cursor-pointer">
+                <span>Buka Kejutan</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+            </button>
+
+            <p class="mt-6 text-[11px] text-ivory/40">
+                *Ketuk tombol di atas untuk memulai alunan lagu & kejutan
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         KONTEN UTAMA (FASE 2 HINGGA FASE 5)
+         ========================================================================== -->
+    <main id="main-journey" class="relative z-10 hidden opacity-0 transition-opacity duration-1000">
+        
+        <!-- ======================================================================
+             FASE 2: PENGANTAR PUITIS (STORYTELLING INTRO)
+             ====================================================================== -->
+        <section id="fase-2" class="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 py-20 text-center">
+            <div class="max-w-3xl mx-auto reveal-element">
+                <div class="inline-block px-4 py-1.5 rounded-full border border-champagne-400/30 bg-champagne-400/10 text-champagne-300 text-xs tracking-[0.2em] uppercase mb-6">
+                    28 November • Untuk Upii-ku Tercinta
+                </div>
+
+                <h2 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold text-ivory leading-tight mb-4">
+                    Selamat Ulang Tahun,
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-champagne-300 via-rose-300 to-champagne-400 mt-1 pb-2">
+                        Nurul Muftiatul Luthfiah
+                    </span>
+                </h2>
+
+                <p class="font-serif italic text-xl sm:text-2xl text-rose-300/90 mb-10">
+                    — Upii, rumah terhangat tempat hatiku selalu ingin pulang —
+                </p>
+
+                <div class="glass-card rounded-3xl p-7 sm:p-10 text-left sm:text-center space-y-5 text-ivory/85 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+                    <p>
+                        Sayang, di tanggal <span class="text-champagne-300 font-medium">28 November</span> ini, semesta kembali merayakan kehadiran seseorang yang membawa kekuatan sekaligus kelembutan dalam satu jiwa.
+                    </p>
+                    <p>
+                        Aku melihat bagaimana kamu melangkah dengan tegar meski hari tak selalu mudah, bagaimana kamu tetap menjadi ruang penuh cinta bagi orang-orang di sekitarmu, dan bagaimana senyummu selalu menyimpan hati yang begitu berani.
+                    </p>
+                    <p class="font-serif italic text-lg sm:text-xl text-champagne-300 pt-2">
+                        “Terima kasih telah lahir ke dunia ini, Sayang. Betapa beruntungnya aku menemukanmu.”
+                    </p>
+                </div>
+
+                <div class="mt-12">
+                    <a href="#fase-3" class="inline-flex flex-col items-center gap-2 text-xs uppercase tracking-[0.2em] text-champagne-300/80 hover:text-champagne-300 transition">
+                        <span>Susuri Jejak Kenangan Kita</span>
+                        <svg class="w-5 h-5 animate-bounce text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             FASE 3: GALERI KENANGAN (6 SLOT FOTO INTERAKTIF)
+             ====================================================================== -->
+        <section id="fase-3" class="min-h-screen py-24 px-5 sm:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-14 reveal-element">
+                    <span class="text-xs uppercase tracking-[0.25em] text-rose-400 font-medium">Babak Kedua</span>
+                    <h3 class="font-serif text-3xl sm:text-5xl font-semibold text-ivory mt-2 mb-4">
+                        Potret Cerita & Senyummu
+                    </h3>
+                    <p class="text-sm sm:text-base text-ivory/70 font-light">
+                        Setiap bingkai menyimpan alasan mengapa aku selalu jatuh hati padamu setiap hari. Ketuk foto untuk membaca catatan kecil di baliknya.
+                    </p>
+                </div>
+
+                <!-- Grid 6 Kartu Foto Polaroid / Glassmorphism -->
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8">
+                    <!-- Kartu foto akan dirender secara dinamis melalui JavaScript -->
+                </div>
+
+                <div class="mt-14 text-center reveal-element">
+                    <a href="#fase-4" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-champagne-400/40 bg-velvet-800/70 hover:bg-champagne-400/15 text-champagne-300 text-sm transition">
+                        <span>Lanjut ke Momen Harapan</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             FASE 4: MOMEN PUNCAK (KUE ULANG TAHUN & TIUP LILIN INTERAKTIF)
+             ====================================================================== -->
+        <section id="fase-4" class="min-h-screen flex flex-col items-center justify-center py-24 px-5 sm:px-8 text-center">
+            <div class="max-w-2xl mx-auto reveal-element">
+                <span class="text-xs uppercase tracking-[0.25em] text-champagne-400 font-medium">Momen Puncak</span>
+                <h3 class="font-serif text-3xl sm:text-5xl font-semibold text-ivory mt-2 mb-4">
+                    Make a Wish, Sayang
+                </h3>
+                <p id="candle-instruction" class="text-sm sm:text-base text-rose-300/90 max-w-md mx-auto mb-8 leading-relaxed">
+                    Pejamkan mata sejenak, panjatkan doa terbaikmu di usia yang baru, lalu <span class="text-champagne-300 font-medium underline decoration-dotted">ketuk nyala lilinnya</span> untuk meniupnya.
+                </p>
+
+                <!-- Kontainer Interaktif Kue Ulang Tahun SVG -->
+                <div class="relative inline-block my-4 select-none">
+                    <!-- Pendaran Cahaya Hangat Lilin -->
+                    <div id="candle-halo" class="candle-halo absolute top-2 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full bg-champagne-400/30 blur-2xl pointer-events-none"></div>
+
+                    <!-- Area Klik Lilin & Kue -->
+                    <button id="cake-interaction-btn" aria-label="Tiup Lilin Ulang Tahun" class="relative group cursor-pointer focus:outline-none p-4 rounded-3xl transition transform hover:scale-[1.02]">
+                        <svg class="w-64 sm:w-72 h-auto mx-auto drop-shadow-[0_18px_35px_rgba(0,0,0,0.65)]" viewBox="0 0 300 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Asap Tipis (Muncul saat ditiup) -->
+                            <g id="smoke-group" class="smoke-puff">
+                                <path d="M150 68 C142 54, 158 42, 148 26" stroke="#fdf8f5" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                                <path d="M155 64 C163 50, 147 38, 156 20" stroke="#f3d59b" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+                            </g>
+
+                            <!-- Nyala Api Lilin -->
+                            <g id="candle-flame" class="candle-flame">
+                                <!-- Aura luar api -->
+                                <path d="M150 22 C164 42, 165 60, 150 66 C135 60, 136 42, 150 22 Z" fill="url(#flameOuter)"/>
+                                <!-- Inti dalam api -->
+                                <path d="M150 36 C157 48, 157 58, 150 62 C143 58, 143 48, 150 36 Z" fill="#fff9e6"/>
+                            </g>
+
+                            <!-- Sumbu Lilin -->
+                            <rect x="148.5" y="64" width="3" height="8" rx="1.5" fill="#3a232b"/>
+
+                            <!-- Batang Lilin Emas & Mawar -->
+                            <rect x="142" y="72" width="16" height="44" rx="4" fill="url(#candleBody)"/>
+                            <path d="M142 82 L158 90 M142 94 L158 102 M142 106 L158 114" stroke="#fdf8f5" stroke-width="2" opacity="0.55"/>
+
+                            <!-- Tingkat Kue Atas -->
+                            <rect x="85" y="116" width="130" height="52" rx="14" fill="url(#cakeTop)"/>
+                            <!-- Lelehan Krim Atas -->
+                            <path d="M85 128 Q95 142 105 130 Q115 145 125 130 Q135 144 145 130 Q155 146 165 130 Q175 143 185 130 Q195 144 215 128 L215 122 C215 118 210 116 202 116 L98 116 C90 116 85 118 85 122 Z" fill="#fdf8f5" opacity="0.92"/>
+                            <!-- Mutiara Emas Hiasan Tingkat Atas -->
+                            <circle cx="105" cy="155" r="3" fill="#f3d59b"/>
+                            <circle cx="127" cy="155" r="3" fill="#f3d59b"/>
+                            <circle cx="150" cy="155" r="3" fill="#f3d59b"/>
+                            <circle cx="173" cy="155" r="3" fill="#f3d59b"/>
+                            <circle cx="195" cy="155" r="3" fill="#f3d59b"/>
+
+                            <!-- Tingkat Kue Bawah -->
+                            <rect x="52" y="168" width="196" height="66" rx="16" fill="url(#cakeBottom)"/>
+                            <!-- Lelehan Krim Bawah -->
+                            <path d="M52 180 Q67 196 82 182 Q97 198 112 182 Q127 196 142 182 Q157 199 172 182 Q187 196 202 182 Q217 197 232 182 Q242 190 248 180 L248 174 C248 170 242 168 234 168 L66 168 C58 168 52 170 52 174 Z" fill="#fae6be" opacity="0.9"/>
+                            <!-- Aksen Hati & Mutiara Tingkat Bawah -->
+                            <path d="M150 216 C150 216 139 208 139 202 C139 198.5 142 196 145 196 C147.2 196 149 197.3 150 199 C151 197.3 152.8 196 155 196 C158 196 161 198.5 161 202 C161 208 150 216 150 216 Z" fill="#f3d59b"/>
+                            <circle cx="95" cy="208" r="3.5" fill="#fdf8f5" opacity="0.8"/>
+                            <circle cx="205" cy="208" r="3.5" fill="#fdf8f5" opacity="0.8"/>
+
+                            <!-- Piring Kue Mewah -->
+                            <ellipse cx="150" cy="240" rx="124" ry="12" fill="url(#plateGrad)"/>
+                            <path d="M65 248 L235 248 L220 258 L80 258 Z" fill="#8f6b32" opacity="0.7"/>
+
+                            <!-- Definisi Gradien SVG -->
+                            <defs>
+                                <linearGradient id="flameOuter" x1="150" y1="22" x2="150" y2="66" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#fff3b0"/>
+                                    <stop offset="55%" stop-color="#ffaa33"/>
+                                    <stop offset="100%" stop-color="#e85d04"/>
+                                </linearGradient>
+                                <linearGradient id="candleBody" x1="142" y1="72" x2="158" y2="116" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#f3d59b"/>
+                                    <stop offset="100%" stop-color="#e5989b"/>
+                                </linearGradient>
+                                <linearGradient id="cakeTop" x1="85" y1="116" x2="215" y2="168" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#b55d69"/>
+                                    <stop offset="100%" stop-color="#7a2e3b"/>
+                                </linearGradient>
+                                <linearGradient id="cakeBottom" x1="52" y1="168" x2="248" y2="234" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#8c3847"/>
+                                    <stop offset="100%" stop-color="#4d1924"/>
+                                </linearGradient>
+                                <linearGradient id="plateGrad" x1="26" y1="240" x2="274" y2="240" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#b88b44"/>
+                                    <stop offset="50%" stop-color="#fae6be"/>
+                                    <stop offset="100%" stop-color="#b88b44"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span id="tap-hint-badge" class="inline-block mt-2 px-4 py-1 rounded-full bg-champagne-400/15 border border-champagne-400/30 text-xs text-champagne-300 group-hover:bg-champagne-400/25 transition">
+                            ✨ Ketuk lilin untuk meniup
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Pesan Kejutan Setelah Lilin Ditiup -->
+                <div id="wish-revealed-box" class="hidden opacity-0 transform translate-y-4 transition-all duration-1000 mt-6">
+                    <div class="glass-card rounded-3xl p-7 sm:p-9 border-champagne-400/40 max-w-xl mx-auto">
+                        <h4 class="font-serif text-2xl sm:text-3xl text-champagne-300 font-semibold mb-3">
+                            Aamiin... Selamat Ulang Tahun, Upii Sayang! 🎉✨
+                        </h4>
+                        <p class="text-sm sm:text-base text-ivory/90 leading-relaxed font-light mb-5">
+                            Semoga segala doa baik yang barusan kamu bisikkan dalam hati dikabulkan satu per satu oleh Tuhan. Semoga kesehatan, kebahagiaan, dan ketenangan selalu memeluk langkahmu—dan semoga aku selalu diizinkan menemani setiap babaknya.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center gap-3">
+                            <button id="relight-candle-btn" class="px-4 py-2 rounded-full border border-ivory/25 hover:border-champagne-400/60 text-xs text-ivory/80 hover:text-champagne-300 transition cursor-pointer">
+                                🔥 Nyalakan Lilin Lagi
+                            </button>
+                            <a href="#fase-5" class="btn-champagne px-6 py-2.5 rounded-full text-xs sm:text-sm font-medium">
+                                Baca Surat Terakhir Untukmu ↓
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             FASE 5: SURAT CINTA TERAKHIR (THE LOVE LETTER)
+             ====================================================================== -->
+        <section id="fase-5" class="min-h-screen flex flex-col items-center justify-center py-24 px-5 sm:px-8">
+            <div class="max-w-2xl w-full mx-auto reveal-element">
+                <div class="text-center mb-10">
+                    <span class="text-xs uppercase tracking-[0.25em] text-rose-400 font-medium">Penutup Perjalanan</span>
+                    <h3 class="font-serif text-3xl sm:text-5xl font-semibold text-ivory mt-2">
+                        Sepucuk Surat Untukmu
+                    </h3>
+                </div>
+
+                <!-- Wrapper Amplop / Surat -->
+                <div id="letter-envelope-wrapper" class="relative">
+                    <!-- Keadaan Amplop Tertutup (Opsional Interaktif Buka Surat) -->
+                    <div id="closed-envelope-card" class="glass-card rounded-3xl p-8 sm:p-12 text-center border-champagne-400/35">
+                        <div class="w-16 h-16 mx-auto mb-5 rounded-full bg-rose-500/20 border border-rose-400/40 flex items-center justify-center text-rose-300">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <p class="font-serif italic text-xl sm:text-2xl text-champagne-300 mb-2">
+                            Untuk: Nurul Muftiatul Luthfiah (Upii)
+                        </p>
+                        <p class="text-xs sm:text-sm text-ivory/65 mb-8">
+                            Tertulis dengan segenap rasa sayang di hari spesialmu, 28 November.
+                        </p>
+                        <button id="open-letter-btn" class="btn-champagne px-7 py-3.5 rounded-full text-sm font-medium cursor-pointer">
+                            Buka Lembaran Surat 💌
+                        </button>
+                    </div>
+
+                    <!-- Isi Lembaran Surat Klasik -->
+                    <article id="opened-letter-paper" class="hidden opacity-0 transform scale-95 transition-all duration-1000 letter-paper rounded-2xl sm:rounded-3xl p-7 sm:p-12 relative overflow-hidden">
+                        <!-- Stempel Tanggal Pojok Kanan -->
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-velvet-800/15 pb-4 mb-6">
+                            <span class="font-serif italic text-lg sm:text-xl font-semibold text-velvet-800">
+                                Upii cintaku,
+                            </span>
+                            <span class="text-xs uppercase tracking-widest text-velvet-700/70 font-medium">
+                                28 November
+                            </span>
+                        </div>
+
+                        <!-- Konten Paragraf Surat (Diisi dari CONFIG_SURAT di JS) -->
+                        <div id="letter-body-content" class="space-y-4 text-sm sm:text-base leading-[32px] text-velvet-900 font-normal">
+                        </div>
+
+                        <!-- Tanda Tangan Penutup -->
+                        <div class="mt-8 pt-4 border-t border-velvet-800/15 flex flex-col items-end text-right">
+                            <p class="font-serif italic text-lg sm:text-xl text-velvet-800 font-semibold">
+                                Selalu memilihmu, hari ini dan seterusnya,
+                            </p>
+                            <p id="letter-signature" class="font-serif text-xl sm:text-2xl font-bold text-rose-500 mt-1">
+                                Yang selalu menyayangimu ❤️
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Tombol Ulangi Perjalanan -->
+                <div class="mt-12 text-center">
+                    <button id="restart-journey-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card hover:border-champagne-400/50 text-xs sm:text-sm text-champagne-300 transition cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                        <span>Ulangi Perjalanan dari Awal</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Halus -->
+        <footer class="py-8 text-center text-xs text-ivory/40 border-t border-ivory/5">
+            Dibuat khusus dengan sepenuh hati untuk Nurul Muftiatul Luthfiah (Upii) • 28 November
+        </footer>
+    </main>
+
+    <!-- ==========================================================================
+         MODAL LIGHTBOX GALERI KENANGAN
+         ========================================================================== -->
+    <div id="photo-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-velvet-950/90 backdrop-blur-lg opacity-0 transition-opacity duration-300">
+        <div class="glass-card rounded-3xl max-w-xl w-full overflow-hidden relative shadow-2xl transform scale-95 transition-transform duration-300" id="photo-modal-card">
+            <button id="close-modal-btn" aria-label="Tutup Foto" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-velvet-950/70 hover:bg-velvet-900 text-ivory flex items-center justify-center border border-ivory/20 transition cursor-pointer">
+                ✕
+            </button>
+            
+            <div class="aspect-[4/3] w-full bg-velvet-800 relative overflow-hidden flex items-center justify-center">
+                <img id="modal-photo-img" src="" alt="Kenangan" class="w-full h-full object-cover hidden">
+                <div id="modal-photo-placeholder" class="text-center p-6">
+                    <span class="text-4xl block mb-2">✨</span>
+                    <p class="font-serif italic text-lg text-champagne-300" id="modal-placeholder-label">foto1.jpg</p>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 text-center">
+                <span id="modal-photo-date" class="text-[11px] uppercase tracking-[0.2em] text-rose-400">Kenangan Indah</span>
+                <h4 id="modal-photo-title" class="font-serif text-2xl sm:text-3xl text-champagne-300 font-semibold mt-1 mb-3">
+                    Judul Kenangan
+                </h4>
+                <p id="modal-photo-story" class="text-sm sm:text-base text-ivory/85 leading-relaxed font-light">
+                    Cerita singkat kenangan...
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         LOGIKA JAVASCRIPT INTERAKTIF & KONFIGURASI KONTEN
+         ========================================================================== -->
+    <script>
+        /**
+         * ========================================================================
+         * 1. KONFIGURASI KONTEN (MUDAH DIEDIT SESUAI KEINGINAN)
+         * ========================================================================
+         * Ganti teks judul, cerita foto, atau isi surat di bawah ini kapan saja.
+         * Untuk foto: cukup simpan file foto1.jpg s/d foto6.jpg di folder yang sama
+         * dengan file index.html ini.
+         */
+        const CONFIG_KENANGAN = [
+            {
+                file: 'foto1.jpg',
+                tag: 'Momen Pertama',
+                judul: 'Senyum yang Menenangkan',
+                cerita: 'Di balik senyummu yang hangat, aku selalu menemukan alasan untuk bersyukur. Terima kasih sudah hadir dan membuat hari-hariku terasa jauh lebih berarti, Sayang.'
+            },
+            {
+                file: 'foto2.jpg',
+                tag: 'Kebersamaan',
+                judul: 'Rumah Tempat Pulang',
+                cerita: 'Sejauh apa pun langkah dan selelah apa pun hari yang kulalui, berada di dekatmu selalu terasa seperti pulang ke rumah yang paling nyaman.'
+            },
+            {
+                file: 'foto3.jpg',
+                tag: 'Kekuatan & Kelembutan',
+                judul: 'Sosok yang Hebat',
+                cerita: 'Aku selalu kagum melihat caramu bertahan dan tetap memberi ruang cinta bagi orang-orang yang kamu sayangi. Kamu kuat sekaligus lembut di saat yang bersamaan.'
+            },
+            {
+                file: 'foto4.jpg',
+                tag: 'Tawa Kita',
+                judul: 'Detik-Detik Sederhana',
+                cerita: 'Hal-hal sederhana pun terasa istimewa saat dijalani bersamamu. Semoga tawa seperti ini selalu menemani langkah kita di tahun-tahun mendatang.'
+            },
+            {
+                file: 'foto5.jpg',
+                tag: 'Perjalanan',
+                judul: 'Menempuh Jalan Berdua',
+                cerita: 'Bila nanti jalan terasa berliku, ingatlah bahwa kamu tidak pernah berjalan sendirian. Tanganku akan selalu ada untuk menggenggam tanganmu.'
+            },
+            {
+                file: 'foto6.jpg',
+                tag: '28 November',
+                judul: 'Hari Spesial Upii',
+                cerita: 'Selamat bertambah usia, Nurul Muftiatul Luthfiah. Semoga setiap impian dan harapan baikmu menemukan jalannya untuk terwujud.'
+            }
+        ];
+
+        const CONFIG_SURAT = {
+            paragraf: [
+                "Selamat ulang tahun yang ke-23 untukmu Sayaang. Di tanggal 28 November ini, aku ingin sejenak menghentikan waktu hanya untuk merayakan betapa berharganya dirimu dalam hidupku.",
+                "Setiap hari aku selalu belajar dari caramu menghadapi dunia—tentang ketulusan, kesabaran, dan bagaimana kamu tetap menjadi cahaya hangat bagi orang-orang di sekitarmu. Cantik hatimu dan baik caramu selalu membuatku ingin menjaga dan membahagiakanmu sebaik yang aku bisa.",
+                "Dalam suka maupun duka, di setiap fase yang menunggu di depan sana, bahkan saat rambut kita memutih perlahan nanti, aku tetap memilihmu—hari ini, esok, dan seterusnya.",
+                "Terima kasih telah hadir dan menjadi bagian terindah dalam perjalanan hidupku, Upii cintaku. Tanganku akan selalu menggenggam tanganmu sampai akhir nanti. Happy birthday Sayaang."
+            ],
+            tandaTangan: "Anum Mubahin ❤️"
+        };
+
+        /**
+         * ========================================================================
+         * 2. INISIALISASI GALERI 6 FOTO & SURAT CINTA
+         * ========================================================================
+         */
+        let currentUploadTargetIndex = null;
+        const customPhotoUrls = {}; // Menyimpan preview foto jika diunggah manual via browser
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+
+            CONFIG_KENANGAN.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'glass-card rounded-2xl p-4 flex flex-col justify-between group hover:border-champagne-400/50 transition-all duration-500 reveal-element';
+                card.style.transitionDelay = `${index * 100}ms`;
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Bingkai Foto -->
+                        <div class="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-gradient-to-br from-velvet-800 via-velvet-700 to-velvet-900 border border-champagne-400/15 cursor-pointer" onclick="openPhotoModal(${index})">
+                            <img 
+                                id="photo-img-${index}" 
+                                src="${item.file}" 
+                                alt="${item.judul}" 
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                onerror="this.style.display='none'; document.getElementById('photo-fallback-${index}').style.display='flex';"
+                            >
+                            <!-- Placeholder Estetik jika foto1.jpg..foto6.jpg belum diletakkan di folder -->
+                            <div id="photo-fallback-${index}" class="hidden absolute inset-0 flex-col items-center justify-center p-5 text-center bg-gradient-to-br from-velvet-800/90 to-velvet-950/95">
+                                <div class="w-11 h-11 rounded-full bg-champagne-400/10 border border-champagne-400/30 flex items-center justify-center text-champagne-300 mb-2.5">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="font-serif italic text-base text-champagne-300">Slot Kenangan #${index + 1}</span>
+                                <span class="text-[11px] text-ivory/50 mt-0.5">File: ${item.file}</span>
+                            </div>
+
+                            <!-- Tombol Cepat Upload Foto Lokal untuk Preview -->
+                            <button 
+                                type="button"
+                                title="Pilih foto lokal untuk preview"
+                                onclick="event.stopPropagation(); triggerPhotoUpload(${index});"
+                                class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-velvet-950/80 hover:bg-champagne-400 text-ivory hover:text-velvet-950 border border-champagne-400/30 text-[10px] font-medium flex items-center gap-1 opacity-85 hover:opacity-100 transition cursor-pointer"
+                            >
+                                <span>📷</span>
+                                <span>Pilih Foto</span>
+                            </button>
+                        </div>
+
+                        <!-- Keterangan Kartu -->
+                        <div class="pt-4 px-1 cursor-pointer" onclick="openPhotoModal(${index})">
+                            <span class="text-[10px] uppercase tracking-[0.2em] text-rose-400 font-medium">${item.tag}</span>
+                            <h4 class="font-serif text-xl sm:text-2xl text-ivory group-hover:text-champagne-300 transition mt-0.5">
+                                ${item.judul}
+                            </h4>
+                            <p class="text-xs sm:text-sm text-ivory/65 line-clamp-2 mt-1.5 font-light leading-relaxed">
+                                ${item.cerita}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 mt-3 border-t border-ivory/10 flex items-center justify-between px-1">
+                        <span class="text-[11px] text-ivory/40">${item.file}</span>
+                        <button onclick="openPhotoModal(${index})" class="text-xs text-champagne-300 hover:underline cursor-pointer">
+                            Baca catatan →
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderLetter() {
+            const container = document.getElementById('letter-body-content');
+            container.innerHTML = CONFIG_SURAT.paragraf
+                .map(text => `<p>${text}</p>`)
+                .join('');
+            document.getElementById('letter-signature').textContent = CONFIG_SURAT.tandaTangan;
+        }
+
+        /**
+         * ========================================================================
+         * 3. FITUR UPLOAD FOTO LOKAL & MODAL LIGHTBOX
+         * ========================================================================
+         */
+        const photoInput = document.getElementById('upload-photo-input');
+
+        function triggerPhotoUpload(index) {
+            currentUploadTargetIndex = index;
+            photoInput.value = '';
+            photoInput.click();
+        }
+
+        photoInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file || currentUploadTargetIndex === null) return;
+
+            const objectUrl = URL.createObjectURL(file);
+            customPhotoUrls[currentUploadTargetIndex] = objectUrl;
+
+            const imgEl = document.getElementById(`photo-img-${currentUploadTargetIndex}`);
+            const fallbackEl = document.getElementById(`photo-fallback-${currentUploadTargetIndex}`);
+            
+            imgEl.src = objectUrl;
+            imgEl.style.display = 'block';
+            fallbackEl.style.display = 'none';
+
+            showToast(`Foto untuk Slot #${currentUploadTargetIndex + 1} berhasil dimuat ✨`);
+        });
+
+        function openPhotoModal(index) {
+            const item = CONFIG_KENANGAN[index];
+            const modal = document.getElementById('photo-modal');
+            const modalCard = document.getElementById('photo-modal-card');
+            const modalImg = document.getElementById('modal-photo-img');
+            const modalPlaceholder = document.getElementById('modal-photo-placeholder');
+
+            document.getElementById('modal-photo-date').textContent = item.tag;
+            document.getElementById('modal-photo-title').textContent = item.judul;
+            document.getElementById('modal-photo-story').textContent = item.cerita;
+            document.getElementById('modal-placeholder-label').textContent = `Belum ada foto (${item.file})`;
+
+            const sourceSrc = customPhotoUrls[index] || item.file;
+            modalImg.src = sourceSrc;
+            modalImg.classList.remove('hidden');
+            modalPlaceholder.classList.add('hidden');
+
+            modalImg.onerror = () => {
+                modalImg.classList.add('hidden');
+                modalPlaceholder.classList.remove('hidden');
+            };
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+            });
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photo-modal');
+            const modalCard = document.getElementById('photo-modal-card');
+            modal.classList.add('opacity-0');
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        document.getElementById('close-modal-btn').addEventListener('click', closePhotoModal);
+        document.getElementById('photo-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'photo-modal') closePhotoModal();
+        });
+
+        /**
+         * ========================================================================
+         * 4. KONTROL PEMUTAR MUSIK LATAR (MP3)
+         * ========================================================================
+         */
+        const bgMusic = document.getElementById('bg-music');
+        const toggleMusicBtn = document.getElementById('toggle-music-btn');
+        const iconPlay = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+        const eqIndicator = document.getElementById('eq-indicator');
+        const mp3Input = document.getElementById('upload-mp3-input');
+        let isPlaying = false;
+
+        function updateMusicUI(playing) {
+            isPlaying = playing;
+            if (playing) {
+                iconPlay.classList.add('hidden');
+                iconPause.classList.remove('hidden');
+                eqIndicator.classList.remove('eq-paused');
+            } else {
+                iconPlay.classList.remove('hidden');
+                iconPause.classList.add('hidden');
+                eqIndicator.classList.add('eq-paused');
+            }
+        }
+
+        function playBackgroundMusic() {
+            bgMusic.volume = 0.85;
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    updateMusicUI(true);
+                }).catch(() => {
+                    updateMusicUI(false);
+                    showToast('Letakkan file musik.mp3 di folder atau pilih MP3 lewat tombol pemutar 🎵');
+                });
+            }
+        }
+
+        toggleMusicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                updateMusicUI(false);
+            } else {
+                playBackgroundMusic();
+            }
+        });
+
+        document.getElementById('trigger-upload-mp3').addEventListener('click', () => {
+            mp3Input.click();
+        });
+
+        mp3Input.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const url = URL.createObjectURL(file);
+            bgMusic.src = url;
+            document.getElementById('music-title').textContent = file.name.replace(/\.[^/.]+$/, "");
+            playBackgroundMusic();
+            showToast('Lagu MP3 berhasil dimuat & diputar 🎶');
+        });
+
+        /**
+         * ========================================================================
+         * 5. TRANSISI FASE 1 -> FASE 2..5 & INTERAKSI TIUP LILIN + SURAT
+         * ========================================================================
+         */
+        const openSurpriseBtn = document.getElementById('open-surprise-btn');
+        const fase1 = document.getElementById('fase-1');
+        const mainJourney = document.getElementById('main-journey');
+        const floatingPlayer = document.getElementById('floating-player');
+
+        openSurpriseBtn.addEventListener('click', () => {
+            // Mulai putar musik
+            playBackgroundMusic();
+
+            // Transisi keluar Fase 1
+            fase1.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+            
+            // Munculkan konten utama & floating player
+            mainJourney.classList.remove('hidden');
+            floatingPlayer.classList.remove('opacity-0', 'pointer-events-none');
+
+            requestAnimationFrame(() => {
+                mainJourney.classList.remove('opacity-0');
+                observeScrollElements();
+            });
+
+            setTimeout(() => {
+                fase1.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Interaksi Tiup Lilin (Fase 4)
+        const cakeBtn = document.getElementById('cake-interaction-btn');
+        const candleFlame = document.getElementById('candle-flame');
+        const candleHalo = document.getElementById('candle-halo');
+        const smokeGroup = document.getElementById('smoke-group');
+        const wishBox = document.getElementById('wish-revealed-box');
+        const tapHintBadge = document.getElementById('tap-hint-badge');
+        let isCandleBlown = false;
+
+        cakeBtn.addEventListener('click', () => {
+            if (isCandleBlown) return;
+            isCandleBlown = true;
+
+            // Padamkan api & cahaya lilin
+            candleFlame.classList.add('blown-out');
+            candleHalo.classList.add('blown-out');
+            tapHintBadge.textContent = '✨ Harapanmu telah terbang ke langit';
+
+            // Animasi asap tipis naik
+            smokeGroup.classList.remove('rising');
+            void smokeGroup.offsetWidth; // reset animasi
+            smokeGroup.classList.add('rising');
+
+            // Ledakan partikel emas & kelopak mawar di canvas
+            triggerCelebrationBurst();
+
+            // Munculkan kotak ucapan harapan
+            wishBox.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                wishBox.classList.remove('opacity-0', 'translate-y-4');
+            });
+        });
+
+        document.getElementById('relight-candle-btn').addEventListener('click', () => {
+            isCandleBlown = false;
+            candleFlame.classList.remove('blown-out');
+            candleHalo.classList.remove('blown-out');
+            smokeGroup.classList.remove('rising');
+            tapHintBadge.textContent = '✨ Ketuk lilin untuk meniup';
+            showToast('Lilin kembali menyala hangat 🔥');
+        });
+
+        // Interaksi Buka Surat (Fase 5)
+        document.getElementById('open-letter-btn').addEventListener('click', () => {
+            const closedCard = document.getElementById('closed-envelope-card');
+            const openedPaper = document.getElementById('opened-letter-paper');
+
+            closedCard.classList.add('hidden');
+            openedPaper.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                openedPaper.classList.remove('opacity-0', 'scale-95');
+                openedPaper.classList.add('scale-100');
+            });
+            triggerCelebrationBurst();
+        });
+
+        // Tombol Ulangi Perjalanan
+        document.getElementById('restart-journey-btn').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        /**
+         * ========================================================================
+         * 6. NOTIFIKASI TOAST & SCROLL OBSERVER
+         * ========================================================================
+         */
+        let toastTimeout;
+        function showToast(message) {
+            const toast = document.getElementById('toast-message');
+            document.getElementById('toast-text').textContent = message;
+            toast.classList.remove('opacity-0', '-translate-y-3');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('opacity-0', '-translate-y-3');
+            }, 3800);
+        }
+
+        function observeScrollElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal-element').forEach(el => observer.observe(el));
+        }
+
+        /**
+         * ========================================================================
+         * 7. ANIMASI LATAR BELAKANG HTML5 CANVAS (KUNANG-KUNANG & KELOPAK MAWAR)
+         * ========================================================================
+         */
+        const canvas = document.getElementById('romantic-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let fireflies = [];
+        let petals = [];
+        let burstParticles = [];
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Kelas Partikel Kunang-kunang / Bokeh Emas
+        class Firefly {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.radius = Math.random() * 2.2 + 0.8;
+                this.vx = (Math.random() - 0.5) * 0.45;
+                this.vy = -Math.random() * 0.4 - 0.1;
+                this.alpha = Math.random() * 0.6 + 0.2;
+                this.pulseSpeed = Math.random() * 0.02 + 0.008;
+                this.phase = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.phase += this.pulseSpeed;
+                if (this.y < -10) this.y = height + 10;
+                if (this.x < -10) this.x = width + 10;
+                if (this.x > width + 10) this.x = -10;
+            }
+            draw() {
+                const currentAlpha = this.alpha * (0.6 + 0.4 * Math.sin(this.phase));
+                ctx.save();
+                ctx.beginPath();
+                const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 4);
+                grad.addColorStop(0, `rgba(250, 230, 190, ${currentAlpha})`);
+                grad.addColorStop(0.5, `rgba(243, 213, 155, ${currentAlpha * 0.4})`);
+                grad.addColorStop(1, 'rgba(243, 213, 155, 0)');
+                ctx.fillStyle = grad;
+                ctx.arc(this.x, this.y, this.radius * 4, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Kelas Kelopak Mawar Melayang Lembut
+        class RosePetal {
+            constructor() {
+                this.reset(true);
+            }
+            reset(initial = false) {
+                this.x = Math.random() * width;
+                this.y = initial ? Math.random() * height : -20;
+                this.size = Math.random() * 6 + 4;
+                this.vy = Math.random() * 0.75 + 0.35;
+                this.vx = (Math.random() - 0.5) * 0.6;
+                this.angle = Math.random() * Math.PI * 2;
+                this.spin = (Math.random() - 0.5) * 0.02;
+                this.swayOffset = Math.random() * Math.PI * 2;
+                this.alpha = Math.random() * 0.35 + 0.15;
+            }
+            update() {
+                this.y += this.vy;
+                this.swayOffset += 0.015;
+                this.x += this.vx + Math.sin(this.swayOffset) * 0.4;
+                this.angle += this.spin;
+                if (this.y > height + 20) this.reset(false);
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size);
+                ctx.bezierCurveTo(this.size, -this.size, this.size, this.size, 0, this.size);
+                ctx.bezierCurveTo(-this.size, this.size, -this.size, -this.size, 0, -this.size);
+                ctx.fillStyle = `rgba(229, 152, 155, ${this.alpha})`;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Ledakan Partikel Selebrasi (Saat lilin ditiup atau surat dibuka)
+        function triggerCelebrationBurst() {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const colors = ['#f3d59b', '#fae6be', '#e5989b', '#fdf8f5'];
+            for (let i = 0; i < 65; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 5 + 1.5;
+                burstParticles.push({
+                    x: centerX,
+                    y: centerY,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed - 1.5,
+                    size: Math.random() * 4 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    alpha: 1,
+                    decay: Math.random() * 0.015 + 0.008
+                });
+            }
+        }
+
+        function initParticles() {
+            const fireflyCount = window.innerWidth < 640 ? 35 : 65;
+            const petalCount = window.innerWidth < 640 ? 14 : 24;
+            fireflies = Array.from({ length: fireflyCount }, () => new Firefly());
+            petals = Array.from({ length: petalCount }, () => new RosePetal());
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, width, height);
+
+            fireflies.forEach(f => { f.update(); f.draw(); });
+            petals.forEach(p => { p.update(); p.draw(); });
+
+            // Render burst particles jika ada
+            for (let i = burstParticles.length - 1; i >= 0; i--) {
+                const bp = burstParticles[i];
+                bp.x += bp.vx;
+                bp.y += bp.vy;
+                bp.vy += 0.05; // gravitasi lembut
+                bp.alpha -= bp.decay;
+
+                if (bp.alpha <= 0) {
+                    burstParticles.splice(i, 1);
+                } else {
+                    ctx.save();
+                    ctx.globalAlpha = bp.alpha;
+                    ctx.fillStyle = bp.color;
+                    ctx.beginPath();
+                    ctx.arc(bp.x, bp.y, bp.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            requestAnimationFrame(animateCanvas);
+        }
+
+        // Jalankan saat halaman dimuat
+        window.onload = function () {
+            renderGallery();
+            renderLetter();
+            initParticles();
+            animateCanvas();
+        };
+    </script>
+</body>
+</html>
