@@ -205,6 +205,14 @@
             100% { height: 16px; }
         }
 
+        /* Proteksi Foto agar tidak bisa di-drag atau dipilih */
+        .locked-photo {
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
@@ -243,10 +251,10 @@
     <audio id="bg-music" loop preload="auto">
         <source src="musik.mp3" type="audio/mpeg">
     </audio>
-
-    <!-- Input File Tersembunyi untuk Upload Preview MP3 & Foto Lokal -->
-    <input type="file" id="upload-mp3-input" accept="audio/mp3,audio/*" class="hidden">
-    <input type="file" id="upload-photo-input" accept="image/*" class="hidden">
+    <!-- Elemen Audio Latar (Terkunci ke musik.mp3) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="musik.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- Notifikasi Toast Lembut (Pengganti alert) -->
     <div id="toast-message" class="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-500 transform -translate-y-3">
@@ -270,16 +278,16 @@
             
             <div class="flex flex-col">
                 <div class="flex items-center gap-2">
-                    <span id="music-title" class="text-xs font-medium text-ivory/90 max-w-[125px] sm:max-w-[160px] truncate">Lagu Untuk Upii</span>
+                    <span id="music-title" class="text-xs font-medium text-ivory/90 max-w-[140px] sm:max-w-[180px] truncate">Happy Birthday, My Forever</span>
                     <div id="eq-indicator" class="flex items-end gap-0.5 h-4 eq-paused">
                         <span class="eq-bar" style="animation-delay: 0.1s"></span>
                         <span class="eq-bar" style="animation-delay: 0.4s"></span>
                         <span class="eq-bar" style="animation-delay: 0.2s"></span>
                     </div>
                 </div>
-                <button id="trigger-upload-mp3" class="text-[10px] text-rose-300/85 hover:text-champagne-300 text-left underline decoration-dotted transition">
-                    Ganti / Uji file MP3
-                </button>
+                <span class="text-[10px] text-rose-300/80">
+                    Untuk Upii Sayang ✨
+                </span>
             </div>
         </div>
     </div>
@@ -610,7 +618,7 @@
             </button>
             
             <div class="aspect-[4/3] w-full bg-velvet-800 relative overflow-hidden flex items-center justify-center">
-                <img id="modal-photo-img" src="" alt="Kenangan" class="w-full h-full object-cover hidden">
+                <img id="modal-photo-img" src="" alt="Kenangan" draggable="false" class="locked-photo w-full h-full object-cover hidden">
                 <div id="modal-photo-placeholder" class="text-center p-6">
                     <span class="text-4xl block mb-2">✨</span>
                     <p class="font-serif italic text-lg text-champagne-300" id="modal-placeholder-label">foto1.jpg</p>
@@ -638,42 +646,42 @@
          * 1. KONFIGURASI KONTEN (MUDAH DIEDIT SESUAI KEINGINAN)
          * ========================================================================
          * Ganti teks judul, cerita foto, atau isi surat di bawah ini kapan saja.
-         * Untuk foto: cukup simpan file foto1.jpg s/d foto6.jpg di folder yang sama
-         * dengan file index.html ini.
+         * Untuk foto: simpan file foto1.jpg (atau foto1.jpeg) s/d foto6.jpg
+         * di folder yang sama dengan file index.html ini.
          */
         const CONFIG_KENANGAN = [
             {
-                file: 'foto1.jpg',
+                baseName: 'foto1',
                 tag: 'Momen Pertama',
                 judul: 'Senyum yang Menenangkan',
                 cerita: 'Di balik senyummu yang hangat, aku selalu menemukan alasan untuk bersyukur. Terima kasih sudah hadir dan membuat hari-hariku terasa jauh lebih berarti, Sayang.'
             },
             {
-                file: 'foto2.jpg',
+                baseName: 'foto2',
                 tag: 'Kebersamaan',
                 judul: 'Rumah Tempat Pulang',
                 cerita: 'Sejauh apa pun langkah dan selelah apa pun hari yang kulalui, berada di dekatmu selalu terasa seperti pulang ke rumah yang paling nyaman.'
             },
             {
-                file: 'foto3.jpg',
+                baseName: 'foto3',
                 tag: 'Kekuatan & Kelembutan',
                 judul: 'Sosok yang Hebat',
                 cerita: 'Aku selalu kagum melihat caramu bertahan dan tetap memberi ruang cinta bagi orang-orang yang kamu sayangi. Kamu kuat sekaligus lembut di saat yang bersamaan.'
             },
             {
-                file: 'foto4.jpg',
+                baseName: 'foto4',
                 tag: 'Tawa Kita',
                 judul: 'Detik-Detik Sederhana',
                 cerita: 'Hal-hal sederhana pun terasa istimewa saat dijalani bersamamu. Semoga tawa seperti ini selalu menemani langkah kita di tahun-tahun mendatang.'
             },
             {
-                file: 'foto5.jpg',
+                baseName: 'foto5',
                 tag: 'Perjalanan',
                 judul: 'Menempuh Jalan Berdua',
                 cerita: 'Bila nanti jalan terasa berliku, ingatlah bahwa kamu tidak pernah berjalan sendirian. Tanganku akan selalu ada untuk menggenggam tanganmu.'
             },
             {
-                file: 'foto6.jpg',
+                baseName: 'foto6',
                 tag: '28 November',
                 judul: 'Hari Spesial Upii',
                 cerita: 'Selamat bertambah usia, Nurul Muftiatul Luthfiah. Semoga setiap impian dan harapan baikmu menemukan jalannya untuk terwujud.'
@@ -692,53 +700,62 @@
 
         /**
          * ========================================================================
-         * 2. INISIALISASI GALERI 6 FOTO & SURAT CINTA
+         * 2. INISIALISASI GALERI 6 FOTO TERKUNCI & SURAT CINTA
          * ========================================================================
          */
-        let currentUploadTargetIndex = null;
-        const customPhotoUrls = {}; // Menyimpan preview foto jika diunggah manual via browser
+        const resolvedPhotoSources = {};
+
+        // Mencoba memuat .jpg terlebih dahulu, otomatis beralih ke .jpeg jika tidak ditemukan
+        function handleImageFallback(imgElement, index) {
+            const baseName = CONFIG_KENANGAN[index].baseName;
+            if (!imgElement.dataset.triedJpeg) {
+                imgElement.dataset.triedJpeg = 'true';
+                imgElement.src = `${baseName}.jpeg`;
+            } else {
+                imgElement.style.display = 'none';
+                const fallbackEl = document.getElementById(`photo-fallback-${index}`);
+                if (fallbackEl) fallbackEl.style.display = 'flex';
+            }
+        }
 
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
 
             CONFIG_KENANGAN.forEach((item, index) => {
+                const defaultSrc = `${item.baseName}.jpg`;
+                resolvedPhotoSources[index] = defaultSrc;
+
                 const card = document.createElement('div');
                 card.className = 'glass-card rounded-2xl p-4 flex flex-col justify-between group hover:border-champagne-400/50 transition-all duration-500 reveal-element';
                 card.style.transitionDelay = `${index * 100}ms`;
 
                 card.innerHTML = `
                     <div>
-                        <!-- Bingkai Foto -->
-                        <div class="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-gradient-to-br from-velvet-800 via-velvet-700 to-velvet-900 border border-champagne-400/15 cursor-pointer" onclick="openPhotoModal(${index})">
+                        <!-- Bingkai Foto Terkunci -->
+                        <div class="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-gradient-to-br from-velvet-800 via-velvet-700 to-velvet-900 border border-champagne-400/15 cursor-pointer select-none" onclick="openPhotoModal(${index})" oncontextmenu="return false;">
                             <img 
                                 id="photo-img-${index}" 
-                                src="${item.file}" 
+                                src="${defaultSrc}" 
                                 alt="${item.judul}" 
-                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                onerror="this.style.display='none'; document.getElementById('photo-fallback-${index}').style.display='flex';"
+                                draggable="false"
+                                class="locked-photo w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                onload="resolvedPhotoSources[${index}] = this.currentSrc || this.src;"
+                                onerror="handleImageFallback(this, ${index});"
                             >
-                            <!-- Placeholder Estetik jika foto1.jpg..foto6.jpg belum diletakkan di folder -->
+                            <!-- Lapisan transparan pelindung interaksi gambar -->
+                            <div class="absolute inset-0 bg-transparent"></div>
+
+                            <!-- Placeholder Estetik jika foto belum diletakkan di folder repository -->
                             <div id="photo-fallback-${index}" class="hidden absolute inset-0 flex-col items-center justify-center p-5 text-center bg-gradient-to-br from-velvet-800/90 to-velvet-950/95">
                                 <div class="w-11 h-11 rounded-full bg-champagne-400/10 border border-champagne-400/30 flex items-center justify-center text-champagne-300 mb-2.5">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                     </svg>
                                 </div>
-                                <span class="font-serif italic text-base text-champagne-300">Slot Kenangan #${index + 1}</span>
-                                <span class="text-[11px] text-ivory/50 mt-0.5">File: ${item.file}</span>
+                                <span class="font-serif italic text-base text-champagne-300">Kenangan #${index + 1}</span>
+                                <span class="text-[11px] text-ivory/50 mt-0.5">${item.baseName}.jpg / .jpeg</span>
                             </div>
-
-                            <!-- Tombol Cepat Upload Foto Lokal untuk Preview -->
-                            <button 
-                                type="button"
-                                title="Pilih foto lokal untuk preview"
-                                onclick="event.stopPropagation(); triggerPhotoUpload(${index});"
-                                class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-velvet-950/80 hover:bg-champagne-400 text-ivory hover:text-velvet-950 border border-champagne-400/30 text-[10px] font-medium flex items-center gap-1 opacity-85 hover:opacity-100 transition cursor-pointer"
-                            >
-                                <span>📷</span>
-                                <span>Pilih Foto</span>
-                            </button>
                         </div>
 
                         <!-- Keterangan Kartu -->
@@ -754,7 +771,7 @@
                     </div>
 
                     <div class="pt-3 mt-3 border-t border-ivory/10 flex items-center justify-between px-1">
-                        <span class="text-[11px] text-ivory/40">${item.file}</span>
+                        <span class="text-[11px] text-rose-300/60">Kenangan #${index + 1}</span>
                         <button onclick="openPhotoModal(${index})" class="text-xs text-champagne-300 hover:underline cursor-pointer">
                             Baca catatan →
                         </button>
@@ -774,34 +791,9 @@
 
         /**
          * ========================================================================
-         * 3. FITUR UPLOAD FOTO LOKAL & MODAL LIGHTBOX
+         * 3. MODAL LIGHTBOX GALERI (TERKUNCI & ANTI KLIK KANAN)
          * ========================================================================
          */
-        const photoInput = document.getElementById('upload-photo-input');
-
-        function triggerPhotoUpload(index) {
-            currentUploadTargetIndex = index;
-            photoInput.value = '';
-            photoInput.click();
-        }
-
-        photoInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file || currentUploadTargetIndex === null) return;
-
-            const objectUrl = URL.createObjectURL(file);
-            customPhotoUrls[currentUploadTargetIndex] = objectUrl;
-
-            const imgEl = document.getElementById(`photo-img-${currentUploadTargetIndex}`);
-            const fallbackEl = document.getElementById(`photo-fallback-${currentUploadTargetIndex}`);
-            
-            imgEl.src = objectUrl;
-            imgEl.style.display = 'block';
-            fallbackEl.style.display = 'none';
-
-            showToast(`Foto untuk Slot #${currentUploadTargetIndex + 1} berhasil dimuat ✨`);
-        });
-
         function openPhotoModal(index) {
             const item = CONFIG_KENANGAN[index];
             const modal = document.getElementById('photo-modal');
@@ -812,16 +804,22 @@
             document.getElementById('modal-photo-date').textContent = item.tag;
             document.getElementById('modal-photo-title').textContent = item.judul;
             document.getElementById('modal-photo-story').textContent = item.cerita;
-            document.getElementById('modal-placeholder-label').textContent = `Belum ada foto (${item.file})`;
+            document.getElementById('modal-placeholder-label').textContent = `Kenangan #${index + 1} (${item.baseName}.jpg / .jpeg)`;
 
-            const sourceSrc = customPhotoUrls[index] || item.file;
+            const sourceSrc = resolvedPhotoSources[index] || `${item.baseName}.jpg`;
+            delete modalImg.dataset.triedJpeg;
             modalImg.src = sourceSrc;
             modalImg.classList.remove('hidden');
             modalPlaceholder.classList.add('hidden');
 
             modalImg.onerror = () => {
-                modalImg.classList.add('hidden');
-                modalPlaceholder.classList.remove('hidden');
+                if (!modalImg.dataset.triedJpeg && !sourceSrc.endsWith('.jpeg')) {
+                    modalImg.dataset.triedJpeg = 'true';
+                    modalImg.src = `${item.baseName}.jpeg`;
+                } else {
+                    modalImg.classList.add('hidden');
+                    modalPlaceholder.classList.remove('hidden');
+                }
             };
 
             modal.classList.remove('hidden');
@@ -849,10 +847,11 @@
         document.getElementById('photo-modal').addEventListener('click', (e) => {
             if (e.target.id === 'photo-modal') closePhotoModal();
         });
+        document.getElementById('modal-photo-img').addEventListener('contextmenu', (e) => e.preventDefault());
 
         /**
          * ========================================================================
-         * 4. KONTROL PEMUTAR MUSIK LATAR (MP3)
+         * 4. KONTROL PEMUTAR MUSIK LATAR (TERKUNCI KE musik.mp3)
          * ========================================================================
          */
         const bgMusic = document.getElementById('bg-music');
@@ -860,7 +859,6 @@
         const iconPlay = document.getElementById('icon-play');
         const iconPause = document.getElementById('icon-pause');
         const eqIndicator = document.getElementById('eq-indicator');
-        const mp3Input = document.getElementById('upload-mp3-input');
         let isPlaying = false;
 
         function updateMusicUI(playing) {
@@ -884,7 +882,7 @@
                     updateMusicUI(true);
                 }).catch(() => {
                     updateMusicUI(false);
-                    showToast('Letakkan file musik.mp3 di folder atau pilih MP3 lewat tombol pemutar 🎵');
+                    showToast('Pastikan file musik.mp3 tersedia di folder website 🎵');
                 });
             }
         }
@@ -896,20 +894,6 @@
             } else {
                 playBackgroundMusic();
             }
-        });
-
-        document.getElementById('trigger-upload-mp3').addEventListener('click', () => {
-            mp3Input.click();
-        });
-
-        mp3Input.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-            const url = URL.createObjectURL(file);
-            bgMusic.src = url;
-            document.getElementById('music-title').textContent = file.name.replace(/\.[^/.]+$/, "");
-            playBackgroundMusic();
-            showToast('Lagu MP3 berhasil dimuat & diputar 🎶');
         });
 
         /**
